@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Department;
+import com.example.demo.error.DepartmentNotFoundException;
 import com.example.demo.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.apache.juli.logging.Log;
@@ -36,8 +37,7 @@ public class DepartmentController {
         return departmentService.fetchDepartmentList();
     }
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId)
-    {
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
     @DeleteMapping("/departments/{id}")
