@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: demo
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:dcbapp
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8082
+
+welcome:
+  message: "Hello to my first Spring Application!!"
